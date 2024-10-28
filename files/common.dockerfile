@@ -246,9 +246,6 @@ RUN apt install -y debian-keyring debian-archive-keyring apt-transport-https && 
     apt-get install -y caddy && \
     rm -rf /var/lib/apt/lists/*
 
-# Copy Caddy configuration
-COPY Caddyfile /etc/caddy/Caddyfile
-
 WORKDIR /app
 COPY --from=build /src/web/.webpack ./
 
